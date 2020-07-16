@@ -1,4 +1,4 @@
-package com.changgou.entity;
+package com.kiki.crm.pojo;
 
 /**
  * 返回结果实体类
@@ -23,6 +23,12 @@ public class Result<T> {
         this.code = code;
         this.message = message;
     }
+
+    public Result(boolean flag, Object data) {
+        this.flag = flag;
+        this.data = (T)data;
+    }
+
 
     public Result() {
         this.flag = true;

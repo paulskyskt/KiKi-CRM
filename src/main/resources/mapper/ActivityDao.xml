@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kiki.crm.dao.ActivityDao">
+
+    <select id="findAll" resultType="com.kiki.crm.domain.Activity">
+        SELECT * FROM tbl_activity
+    </select>
+
+    <insert id="add" parameterType="com.kiki.crm.domain.Activity">
+        INSERT INTO tbl_activity (
+        <if test="id != null">
+            id,
+        </if>
+        <if test="owner != null">
+            owner,
+        </if>
+            startDate,
+            endDate,
+            cost,
+            description,
+            creatTime,
+            creatBy,
+            editTime,
+            editBy,
+            name
+        ) VALUES (
+        <if test="id != null">
+            #{id},
+        </if>
+        <if test="owner != null">
+            #{owner},
+        </if>
+            #{startDate},
+            #{endDate},
+            #{cost},
+            #{description},
+            #{creatTime},
+            #{creatBy},
+            #{editTime},
+            #{editBy},
+            #{name}
+        )
+
+
+    </insert>
+</mapper>

@@ -1,4 +1,4 @@
-package com.changgou.entity;
+package com.kiki.crm.pojo;
 
 /**
  * 返回码
