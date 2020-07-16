@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: crm-kiki
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://nanakomast.mysql.zhangbei.rds.aliyuncs.com/crm?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: paul
+    password: 524860578lL
