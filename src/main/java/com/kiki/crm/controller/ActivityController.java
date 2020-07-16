@@ -2,6 +2,7 @@ package com.kiki.crm.controller;
 
 
 import com.kiki.crm.domain.Activity;
+import com.kiki.crm.pojo.LayResult;
 import com.kiki.crm.pojo.Result;
 import com.kiki.crm.pojo.StatusCode;
 import com.kiki.crm.service.ActivityService;
@@ -19,10 +20,10 @@ public class ActivityController {
     private ActivityService activityService;
 
     @GetMapping
-    public Result getAllActivity(){
+    public LayResult getAllActivity(){
        List<Activity> activityList = activityService.findAll();
 
-       return new Result(true, StatusCode.OK,"ok",activityList);
+       return new LayResult(0, "ok",20,activityList);
     }
 
     @PostMapping("/add")

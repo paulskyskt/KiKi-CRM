@@ -13,11 +13,11 @@ spring:
 #  resources:
 #    static-locations: classpath:/static/, classpath:/templates/
 
-#  mvc:
-#    static-path-pattern: /static/**
-#    view:
-#      prefix: classpath:/templates/
-#      suffix: .html
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: classpath:/templates/
+      suffix: .html
 
 mybatis:
   mapperLocations: classpath:mapper/*.xml
