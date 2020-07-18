@@ -45,4 +45,50 @@
 
 
     </insert>
+
+    <update id="edit" parameterType="com.kiki.crm.domain.Activity">
+        UPDATE tbl_activity
+            <set>
+                <if test="name != null">
+                    name = #{name},
+                </if>
+                <if test="owner != null">
+                    owner = #{owner},
+                </if>
+                <if test="startDate != null">
+                    startDate = #{startDate},
+                </if>
+                <if test="endDate != null">
+                    endDate = #{endDate},
+                </if>
+                <if test="cost != null">
+                    cost = #{cost},
+                </if>
+                <if test="description != null">
+                    description = #{description},
+                </if>
+                <if test="creatTime != null">
+                    creatTime = #{creatTime},
+                </if>
+                <if test="creatBy != null">
+                    creatBy = #{creatBy},
+                </if>
+                <if test="editTime != null">
+                    editTime = #{editTime},
+                </if>
+                <if test="editBy != null">
+                    editBy = #{editBy},
+                </if>
+            </set>
+        where id = #{id}
+    </update>
+
+    <select id="findById" parameterType="string" resultType="com.kiki.crm.domain.Activity">
+        select * from tbl_activity where id = #{id}
+    </select>
+
+
+    <select id="findRemarkById" resultType="com.kiki.crm.domain.ActivityRemark" parameterType="string">
+        SELECT * from tbl_activity_remark where activityId = #{id}
+    </select>
 </mapper>

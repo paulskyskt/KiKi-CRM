@@ -1,5 +1,6 @@
 package com.kiki.crm.domain;
 
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Table(name = "tbl_activity")
