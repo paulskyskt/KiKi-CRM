@@ -6,6 +6,7 @@ import com.kiki.crm.pojo.LayResult;
 import com.kiki.crm.pojo.Result;
 import com.kiki.crm.pojo.StatusCode;
 import com.kiki.crm.service.ActivityService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,10 +22,12 @@ public class ActivityController {
 
     @GetMapping
     public LayResult getAllActivity(){
-       List<Activity> activityList = activityService.findAll();
 
-       return new LayResult(0, "ok",20,activityList);
+        List<Activity> activityList = activityService.findAll();
+
+        return new LayResult(0, "ok",20,activityList);
     }
+
 
     @PostMapping("/add")
     @Transient
