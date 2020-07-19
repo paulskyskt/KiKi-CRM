@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kiki.crm.dao.ClueDao">
+
+    <resultMap id="clueActivity" type="com.kiki.crm.domain.Clue">
+        <id property="id" column="id"></id>
+        <result column="fullname" property="fullname"></result>
+        <result column="appellation" property="appellation"></result>
+        <result column="company" property="company"></result>
+        <result column="owner" property="owner"></result>
+        <collection property="activityList" select="com.kiki.crm.dao.ClueDao.findActivity" column="id" ofType="com.kiki.crm.domain.Activity">
+
+        </collection>
+    </resultMap>
+    <select id="findClueActivityById" resultMap="clueActivity" parameterType="string">
+        SELECT * from tbl_clue where id = #{id}
+    </select>
+
+    <select id="findActivity" resultType="com.kiki.crm.domain.Activity" parameterType="string">
+        SELECT * from tbl_activity where id in (SELECT activtiy_id from tbl_activity_clue where clue_id = #{id})
+    </select>
+
+</mapper>

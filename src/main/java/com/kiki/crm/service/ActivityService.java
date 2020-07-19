@@ -42,6 +42,7 @@ public class ActivityService {
         ActivityAllVO activityAllVO = new ActivityAllVO();
 
         List<ActivityRemark> activityRemarkList = activityDao.findRemarkById(id);
+        activityAllVO.setActivityRemarkList(activityRemarkList);
 
         return activityAllVO;
     }
