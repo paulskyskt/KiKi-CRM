@@ -17,4 +17,9 @@ public class WebController {
     public String web(){
         return "activity";
     }
+
+    @GetMapping("/z")
+    public String zhang(){
+        return "zhang";
+    }
 }

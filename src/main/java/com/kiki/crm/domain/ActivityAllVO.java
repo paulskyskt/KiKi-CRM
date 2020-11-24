@@ -22,5 +22,4 @@ public class ActivityAllVO {
 
     private List<ActivityRemark> activityRemarkList;
 
-
 }
